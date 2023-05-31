@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font1: 'Sigmar', cursive;
+    --font2: Verdana, sans-serif;
+
+    --branca_areia: #F2F2F2;
+    --branca: #ffffff;
+    --verdeescuro: #025E73;
+    --azulescuro:#090C40;
+    --azul02: #048ABF;
+    --laranja:#f58438;
+    --amarelo:#F2B705;
+    --verdeclaro:#5ABF4B;
+
+
+}
+
+main {
+    display: flex;
+    background-color: var(--branca_areia) ;
+}
+
+aside {
+    background-color: var(--verdeescuro);
+    height: 100vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.one_aside {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+
+}
+
+.half_aside {
+    position: relative;
+}
+
+.two_aside {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+
+.log_aside {
+    height: 70px;
+    width: 80px;
+    position: relative;
+}
+
+
+.ft_aside {
+    height: 90px;
+    width: 90px;
+
+
+}
+
+.engrenagem_aside {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 68px;
+    left: 74px;
+
+}
+
+
+
+.lista_aside li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.lista_aside a {
+    color: var(--branca);
+    font-size: 20px;
+    list-style: none;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+    font-family: var(--font2);
+
+
+}
+
+.fot_aside {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+   
+}
+
+.saida_aside {
+    height: 30px;
+    width: 30px;
+
+}
+
+.logomarcafirstone_aside {
+    height: 90px;
+    width: 100px;
+
+}
+
+section {
+
+
+    height: 100vh;
+    width: calc(100vw - 20vw);
+    margin: 0 44px;
+    color: var(--verdeescuro);
+    background-color: rgb(47, 255, 248);
+}
+
+.section_filter_users {
+    height: 20vh;
+    width: calc(100vw - 19.5vw - 88px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+
+
+
+
+.one_table {
+    height: 10vh;
+    width: 75%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+}
+
+.one_table .one_table_div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.one_table_div
+{
+    height: 50px;
+    width: 180px;
+    font-family: var(--font2);
+    font-size: 16px;
+    color: var(--verdeescuro);
+    
+}
+
+label
+{
+    margin-right: 45px;
+}
+
+label{
+    display: block;
+    /* margin-right: 30px; */
+  
+}
+
+/* select + label
+{
+    width: fit-content;
+} */
+
+select
+{
+    display: block;
+    margin-top: 5px;
+    
+    
+}
+
+select
+{
+   height: 30px;
+   width: 180px;
+   margin-left: 24px;
+   border-color: var(--verdeescuro);
+   border-width: 2px;
+   border-style: solid;
+   border-radius: 10px;
+   text-align: center;
+}
+
+select option
+{
+    color: var(--verdeescuro);
+}
+
+
+
+.delete_table img, .delete_table  {
+    height: 40px;
+    width: 40px;
+    margin-left: 6px;
+
+}
+
+table
+{
+    height: 10vh;
+    width: 100%;
+    background-color: var(--branca_areia);
+    color: var(--verdeescuro);
+}
+
+
+
+
+table th 
+{
+    border-bottom: 3px solid red;
+    text-transform: uppercase;
+    font-family: var(--font2);
+    font-size: 16px;
+    font-weight: normal;
+    border-color: var(--branca_areia);
+    
+}
+table td
+{
+    border: 1px solid #ffff;
+    border-collapse: collapse;
+   
+    
+
+}
+
+.btn_cadastrar
+{
+    padding: 6px 30px;
+    background-color:var(--verdeescuro);
+    color: var(--branca);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font2);
+    font-size: 20px;
+    font-weight: normal;
+    cursor: pointer;
+    list-style: none;
+    text-decoration: none;
+    border-radius: 19px;
+
+
+}
+
+.tr_one
+{
+    border-bottom: 1px solid red;
+}
+
+
+th
+{
+    text-align: left;
+    padding-right: 10px;
+    height: 100px;
+
+}
+
+th 
+{
+  
+  
+}
+
+td
+{
+    padding-left: 10px;
+   
+
+
+}
+
+
+td
+{
+    height: 30px;
+    width: 80px;
+}
+
+.semafaro_td
+{
+    width: 100px;
+}
+
+.semafaro
+{
+    height: 60px;
+    width: 60px;
+}
+.th_table
+{
+    align-items: right;
+
+}
+.delete_table
+{
+    align-items: right;
+
+}
+
+.th_tableimg, .td_tableimg
+{
+    width: 2vw;
+}
