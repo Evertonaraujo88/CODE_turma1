@@ -1,0 +1,16 @@
+let prompt = require('prompt-sync')();
+
+// Faça um programa que receba um número do usuário e informe
+// se este número é par ou ímpar.
+
+let numero = parseInt(prompt("Informe o número que deseja ser par ou impar:"))
+
+let resultado = ((numero) % 2);
+
+if (resultado == 0) {
+    console.log("Número par")
+} else if (resultado == 1) {
+    console.log("Número impar")
+}else {
+    console.log("Digite um número válido!")
+}
