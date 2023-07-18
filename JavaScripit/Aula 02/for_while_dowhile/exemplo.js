@@ -1,4 +1,4 @@
-
+ const PromptSync = require('prompt-sync')();
 
 
 
@@ -61,16 +61,16 @@ let contador = 0; */
 
 
     } while (numeroEscolhido != "5"); */
-    const PromptSync = require('prompt-sync')()
+   
     
     let senha;
 
     do {
 
-        senha = prompt("Digite sua senha: ")
+        senha = prompt("Digite sua senha: ");
 
         if (senha != "123") {
-         console.log('senha invalida!');   
+         console.log("senha invalida!");   
         }
         
 
