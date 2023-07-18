@@ -12,6 +12,6 @@ soma = num1 + num2;
 
 console.log(soma);
 num1 ++
-num2++
+num2 ++
 
 }while (soma <= 100 );
