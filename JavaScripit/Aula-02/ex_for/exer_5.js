@@ -6,7 +6,7 @@ let num1 = 0;
 let num2 = 1;
 let auxiliar;
 
- for (var i = 0; i <= 10; i++)
+ for (var i = 0; i < 10; i++)
  {
     auxiliar = num1;
     num1 = num2;
