@@ -1,4 +1,5 @@
-const prompt = require('prompt-sync')();
+import PromptSync from 'prompt-sync';
+let prompt = PromptSync();
 
 /* 7. Calcular a soma dos números de 1 a 100 utilizando a estrutura
 while. */
@@ -16,12 +17,15 @@ num2 ++
 
 }while (soma < 100 ); */
 
-let resultado =0;
-let contador = 1;
+export function somaDe1a100() {
+    let resultado = 0;
+    let contador = 1;
 
-while (contador <=100) {
-    resultado = resultado + contador;
+    while (contador <= 100) {
+        resultado = resultado + contador;
 
-    contador++
-    console.log(resultado);
+        contador++
+        console.log(resultado);
+    }
 }
+
