@@ -25,10 +25,8 @@ function cacularIdade(event) {
 
     let dadosUsuario = pegarValores();
 
-    let ano = calcularAno(dadosUsuario.anoNascimento);
-   /*  let mes = calularMes(dadosUsuario.mes);*/
-     
-    /* console.log(classificarIdade(ano)); */
+    let ano = calcularAno(diaNascimento ,dadosUsuario.mesNascimento,dadosUsuario.anoNascimento);
+   
     let classificacaoIdade = classificarIdade(ano);
 
     let usuarioAtualizado = organizarDados(dadosUsuario, ano, classificacaoIdade);
@@ -53,10 +51,9 @@ function pegarValores() {
     let dadosUsuario = {
 
         nome: nomeDigitado,
-        dia: diaDigitado,
-        mes: mesDigitado,
-        anoNascimento: anoDigitado
-        
+        diaNascimento: diaDigitado,
+        mesNascimento: mesDigitado,
+        anoNascimento: anoDigitado      
         
     }
 
@@ -71,27 +68,30 @@ function pegarValores() {
 //   b. Com mês (EXTRA)
 //   c. Com dia (EXTRA)
 
-function calcularAno( anoNascimento) {
+function calcularAno( diaNascimento, mesNascimento ,anoNascimento) {
         let now = new Date;
-        let idadeAno = now.getFullYear() - anoNascimento;
 
-        
-        /* let idadeDia = ((now.getDate()) - dia) + (idadeAno * 365); */
- 
-        console.log(idadeAno);
-   
-     /*    console.log(idadeDia); */
+    let diaAtual = now.getDate();
+    let mesAtual = now.getMonth() + 1;
+    let anoAtual = now.getFullYear();
 
-        return idadeAno;
+    let idadeAno = anoAtual - anoNascimento;
+    let idadeMeses = mesAtual - mesNascimento;
+    let idadeDias = diaAtual - diaNascimento;
+
+    if (idadeDias < 0) {
+        idadeMeses--;
+        idadeDias += 30;
+    }
+
+    if (idadeMeses < 0) {
+        idadeAno--;
+        idadeMeses += 12;
+    }
+
+    return { idadeAno, idadeMeses, idadeDias };
         
 }
-
-/* function calularMes(mes) {
-    let now = new Date;
-    let idadeMes = ((now.getMonth()) - mes)+ (calcularAno(ano) * 12);
-
-        console.log(idadeMes);
-} */
 
 /* 
     3. Gerar a faixa etária
@@ -129,7 +129,9 @@ function classificarIdade(idadeAno) {
 
     let dadosUsuarioAtualizado = {
         ...dadosUsuario,
-        ano : idadeAno,
+        idade : idadeAno,
+        idadeMeses: idadeMeses,
+        idadeDias: idadeDias,
         classificacaoIdade: classificarIdade,
         dataCadastro: dataHoraatual
     }  
@@ -187,6 +189,7 @@ function classificarIdade(idadeAno) {
 // Adiciona o evento a janela/navegador que executa a função carregarUsuarios quando o DOM estiver carregado
 window.addEventListener('DOMContentLoaded', () => carregarUsuarios());
 
+/* 7. Renderizar o conteúdo da tabela com as pessoas cadastradas */
 function montarTabela(listaDeCadastrados) {
    
     let tabela = document.getElementById("corpo-tabela");
@@ -201,8 +204,8 @@ function montarTabela(listaDeCadastrados) {
         // E adiciona um bloco de codigo igual o a baixo dentro da variavel template para cada elemento do array
         template += `<tr>
         <td data-cell="nome">${pessoa.nome}</td>
-        <td data-cell="data de nascimento">${(pessoa.dia)+ "/"+ (pessoa.mes)+"/"+(pessoa.ano)}</td>
-        <td data-cell="idade">${pessoa.ano}</td>
+        <td data-cell="data de nascimento">${(pessoa.dia)+ "/"+ (pessoa.mes)+"/"+(pessoa.anoNascimento)}</td>
+        <td data-cell="idade">${pessoa.idade}Anos(s), ${pessoa.mesNascimento}Mes(es) e ${pessoa.idadeDias}dia(s)</td>
         <td data-cell="faixa etária">${pessoa.classificacaoIdade}</td>
     </tr>        `
     });
