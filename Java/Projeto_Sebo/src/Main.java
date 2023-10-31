@@ -12,6 +12,7 @@ public class Main {
         Livro metodoLivro = new Livro();
 
         System.out.println("Bem vindo ao Sebo!!!!!");
+        System.out.println();
 
         Scanner leitor = new Scanner(System.in);
 
@@ -19,8 +20,13 @@ public class Main {
 
         do {
 
-            System.out.println("Digite uma opção: 1-Cadastrar lIVRO / 2-Listar lIVRO / 0-Sair");
+            System.out.println("" +
+                    "Digite uma opção: " +
+                    "1-Cadastrar lIVRO" +
+                    "2-Listar lIVRO" +
+                    "0-Sair");
             opcao = leitor.nextLine();
+            System.out.println();
 
             switch (opcao){
 
@@ -42,11 +48,9 @@ public class Main {
 
                     if (tempolanc.getYears() > 5) {
                         System.out.println("Tempo de lançamento válido para continuar o cadastro!!");
-
-
-
+                        System.out.println();
                     } else {
-                        System.out.println("Esse livro não atende o tempo mínimo de 5anos de lançamento.");
+                        System.out.println("Esse livro não atende o tempo mínimo de 5 anos de lançamento.");
                         break;
                     }
 
@@ -55,7 +59,6 @@ public class Main {
 
                     System.out.println("Digite o local de nascimento do autor: ");
                     novoLivro.autor.localNasc = leitor.next();
-
 
                     listaLivros.add(novoLivro);
 
@@ -73,8 +76,8 @@ public class Main {
                             System.out.println("Nome do autor: " + cadaLivro.autor.nome +" -" + " local de nascimento: " + cadaLivro.autor.localNasc);
 
                             System.out.println();
-                            System.out.println("Aperte ENTER para continuar");
-                            leitor.nextLine();
+                            /*System.out.println("Aperte ENTER para continuar");
+                            leitor.nextLine();*/
                         }
 
                     } else {
@@ -82,6 +85,9 @@ public class Main {
 
                     }
                     break;
+                case "0":
+
+                    System.out.println("Até logo!!!!");
 
             }
 
